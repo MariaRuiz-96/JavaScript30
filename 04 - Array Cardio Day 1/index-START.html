@@ -103,12 +103,19 @@
     let search = boulevardsDeParis.filter(cadena => cadena.includes("de"))
 
     console.log(search)
+
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    let sort3 = people.sort((a,b)=> a.localeCompare(b))
+
+    console.log(sort3)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    let filter2 = data.filter((item, index) => data.indexOf(item) === index)
+
+    console.log(filter2)
 
   </script>
 </body>
