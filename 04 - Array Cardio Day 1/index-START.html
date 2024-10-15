@@ -38,22 +38,71 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    let años1500 = inventors.filter((inventor) =>{
+      if(inventor.year >= 1500 && inventor.year <= 1599){
+        return true
+      }  else return false
+    })
+
+    console.log(años1500)
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
 
+    let map = inventors.map((inventor)=>{
+      return `${inventor.first} ${inventor.last}`;
+    })
+
+    console.log(map)
+
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    let sort = inventors.sort((a,b)=> {
+      return a.year- b.year;
+    })
+
+    console.log(sort)
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    let reduce = inventors.reduce((total, inventor)=>{
+      let anosVividos = Number(inventor.passed) - Number(inventor.year);
+      return total + anosVividos
+    }, 0)
+
+    console.log(reduce)
 
     // 5. Sort the inventors by years lived
 
+    let sort2 = inventors.sort((a,b)=> {
+      return (a.passed - a.year)- (b.passed - b.year);
+    })
+
+    console.log(sort2)
+
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    const boulevardsDeParis = [
+  "Boulevard de la Madeleine",
+  "Boulevard des Capucines",
+  "Boulevard des Italiens",
+  "Boulevard Montmartre",
+  "Boulevard Poissonnière",
+  "Boulevard de Bonne Nouvelle",
+  "Boulevard Saint-Denis",
+  "Boulevard Saint-Martin",
+  "Boulevard Beaumarchais",
+  "Boulevard Filles-du-Calvaire",
+  "Boulevard du Temple",
+  "Boulevard de Sébastopol",
+  "Boulevard Richard-Lenoir",
+  "Boulevard Voltaire",
+  "Boulevard périphérique"
+  ];
 
+    let search = boulevardsDeParis.filter(cadena => cadena.includes("de"))
 
+    console.log(search)
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
