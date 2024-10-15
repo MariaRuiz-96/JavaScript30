@@ -59,7 +59,7 @@
     // 3. Sort the inventors by birthdate, oldest to youngest
     let sort = inventors.sort((a,b)=> {
       return a.year- b.year;
-    })
+    }).reverse()
 
     console.log(sort)
 
@@ -76,7 +76,7 @@
 
     let sort2 = inventors.sort((a,b)=> {
       return (a.passed - a.year)- (b.passed - b.year);
-    })
+    }).reverse()
 
     console.log(sort2)
 
@@ -113,7 +113,13 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    let filter2 = data.filter((item, index) => data.indexOf(item) === index)
+    let filter2 = data.reduce((obj,item)=>{
+      if(!obj[item]){
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    },{})
 
     console.log(filter2)
 
